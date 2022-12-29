@@ -1,7 +1,13 @@
 package ma.archi.smart.archzy.security.jwt;
 
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ma.archi.smart.archzy.ArchzyApplication;
+import ma.archi.smart.archzy.security.bean.User;
+import ma.archi.smart.archzy.security.common.SecurityParams;
+import ma.archi.smart.archzy.security.service.facade.UserService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -44,7 +50,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             FilterChain chain, Authentication authResult) throws IOException, ServletException {
         User user = (User) authResult.getPrincipal();
 
-        UserService userService = RdvApplication.getCtx().getBean(UserService.class);
+        UserService userService = ArchzyApplication.getCtx().getBean(UserService.class);
 
         User myUser = userService.findByUsernameWithRoles(user.getUsername());
 
