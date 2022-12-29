@@ -8,10 +8,10 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ma.enova</groupId>
-    <artifactId>rdv</artifactId>
+    <groupId>com.archi.smart</groupId>
+    <artifactId>archzy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rdv</name>
+    <name>archzy</name>
     <description>Demo project generated</description>
 
     <properties>
